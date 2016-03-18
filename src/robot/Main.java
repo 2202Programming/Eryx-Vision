@@ -11,8 +11,7 @@ import saving.ScreenSetup;
 
 public class Main {
 	private final static boolean setupPicturePosition = false;
-	private final static boolean displayPictures = true
-                , displayFinalPicture = true;
+	private final static boolean displayPictures = true, displayFinalPicture = true;
 	private final static boolean showLowerCorners = true;
   
 	public static void main(String[] args) {
@@ -22,11 +21,11 @@ public class Main {
 			ScreenSetup.setupScreen();
 		} 
                 else {
-                    for (int i = 0; i < 1000000; i++) {
+                    for (int i = 0; i < 1; i++) {
                         ScreenSetup.loadData();
 			Window.init();
                         
-			if (Comms.shouldRunVision()) {//state==1
+			if (true){//Comms.shouldRunVision()) {//state==1
                             //Comms.setState(2);
                             System.out.println("Running vision...");
                             try {
@@ -123,7 +122,8 @@ public class Main {
 			System.out.println("Estimated distance: "+distance);
                         
                         System.out.println("*** Turning: "+degreesToTurn+" degrees.***");
-                        Comms.setAngle(degreesToTurn);
+                        System.out.println(distance);
+                        Comms.setAngle(0);//degreesToTurn);
                         Comms.setDistance(distance);
 		}
 		
