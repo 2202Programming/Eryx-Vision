@@ -15,7 +15,6 @@ public class Comms {
     
     public static void setAngle(float angleIn){
         angleIn+=DEGREE_OFFSET;
-        System.out.println("Turning: "+angleIn+" degrees.");
         table.putNumber("degreesToTurn",angleIn);
     }
     public static void setDistance(double distanceIn){

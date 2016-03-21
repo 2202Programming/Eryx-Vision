@@ -21,12 +21,12 @@ public class Main {
 			ScreenSetup.setupScreen();
 		} 
                 else {
-                    for (int i = 0; i < 1; i++) {
+                    for (int i = 0; i < 100000; i++) {
                         ScreenSetup.loadData();
 			Window.init();
                         
-			if (true){//Comms.shouldRunVision()) {//state==1
-                            //Comms.setState(2);
+			if (Comms.shouldRunVision()) {//state==1
+                            Comms.setState(2);
                             System.out.println("Running vision...");
                             try {
                                 runProgram();
@@ -116,15 +116,13 @@ public class Main {
 			if (displayPictures||displayFinalPicture) Window.displayPixelsWithPeaks(oldPixels, combined, target, "Found it?");
 			
 			float degreesToTurn=Turing.getDegreesToTurn(pixels.length, target);
-			System.out.println("Turning "+degreesToTurn+" degrees.");
-			
-			double distance=Turing.getDistanceFromGoal(pixels.length, pixels[0].length, target);
-			System.out.println("Estimated distance: "+distance);
+			System.out.println("*** Turning: "+degreesToTurn+" degrees.***");
                         
-                        System.out.println("*** Turning: "+degreesToTurn+" degrees.***");
-                        System.out.println(distance);
+			double distance=Turing.getDistanceFromGoal(pixels.length, pixels[0].length, target);
+                        System.out.println("*** Distance: "+distance+" inches.***");
+                        
                         Comms.setAngle(0);//degreesToTurn);
-                        Comms.setDistance(distance);
+                        Comms.setDistance(0);//distance);
 		}
 		
 		System.out.println("Took "+(0.0+System.currentTimeMillis()-startTime)/1000+" seconds.");

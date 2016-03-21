@@ -49,7 +49,10 @@ public class Turing {
                     System.out.println("theta" + theta);
                     System.out.println(h + "h");
                 }
+                float thetaInDegrees=theta*((float)Math.PI/180);
                 
-		return (h / (Math.tan(theta*(Math.PI/180)))*1.7);
+                final float fredsConstant=1.7f;
+                float distance= h/(float)Math.tan(thetaInDegrees)*fredsConstant;
+		return distance;
 	}
 }
