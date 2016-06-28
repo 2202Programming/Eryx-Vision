@@ -3,7 +3,7 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
         //You must call Comms.run before using any of the methods to initialize the Ip and set client mode 
 
 public class Comms {
-    private static final double DEGREE_OFFSET=-2;
+    private static final double DEGREE_OFFSET=-5;
     private static NetworkTable table;
     
     public static void init() {
