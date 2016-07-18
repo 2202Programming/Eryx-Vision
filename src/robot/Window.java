@@ -88,6 +88,7 @@ public class Window {
 	}
 
 	public static void displayPixels(boolean[][] pixels, String pictureName) {
+            System.out.println("There.");
 		BufferedImage toDraw = new BufferedImage(pixels.length, pixels[0].length, BufferedImage.TYPE_INT_ARGB);
 		for (int x = 0; x < pixels.length; x++) {
 			for (int y = 0; y < pixels[x].length; y++) {

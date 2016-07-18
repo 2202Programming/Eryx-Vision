@@ -58,8 +58,8 @@ public class Main {
 		
 		float[][] pixels=Window.getPixels(ScreenSetup.pictureStartX, ScreenSetup.pictureStartY,
 				ScreenSetup.pictureEndX, ScreenSetup.pictureEndY);
-		pixels=ImageProcessor.scaleImage(pixels, 300);
-		float[][] oldPixels=ImageProcessor.scaleImage(pixels, 300);
+		pixels=ImageProcessor.scaleImage(pixels, 200);
+		float[][] oldPixels=ImageProcessor.scaleImage(pixels, 200);
 		if (displayPictures) Window.displayPixels(pixels, "Pre-ExponentialCurve");
                 System.out.println("Printing picture");
 		
@@ -76,7 +76,7 @@ public class Main {
 		ImageProcessor.applyExponentialCurve(corners, 4);
 		if (displayPictures) Window.displayPixels(corners, "Likely Corners");
 		
-		Blur.applyGuassianBlur(corners, 10);
+		Blur.applyGuassianBlur(corners, 6);
 		if (displayPictures) Window.displayPixels(corners, "Likely Corners, Blurred");
 		
 		ImageProcessor.normalize(corners);
