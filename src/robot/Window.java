@@ -144,7 +144,7 @@ public class Window {
 			if (!useSameWindow) {
 				frame.setLocation(x, y);
 			} else {
-				frame.setLocation(1000, 200);
+				frame.setLocation(0, 00);
 			}
 			x += i.getWidth();
 			if (x > i.getWidth() * 3) {

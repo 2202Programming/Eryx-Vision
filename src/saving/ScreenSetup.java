@@ -12,13 +12,13 @@ public class ScreenSetup {
 	
 	public static void setupScreen() {
 		System.out.println("Move the mouse to the TOP LEFT corner of the image...");
-		stop(3);
+		stop(5);
 		Point startLocation=MouseInfo.getPointerInfo().getLocation();
 		pictureStartX=startLocation.x;
 		pictureStartY=startLocation.y;
 		
 		System.out.println("\nMove the mouse to the BOTTOM RIGHT corner of the image...");
-		stop(3);
+		stop(5);
 		Point endLocation=MouseInfo.getPointerInfo().getLocation();
 		pictureEndX=endLocation.x;
 		pictureEndY=endLocation.y;
